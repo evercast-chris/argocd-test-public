@@ -1,0 +1,1105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "11"
+  creationTimestamp: "2021-06-10T06:41:02Z"
+  generation: 11
+  labels:
+    app.kubernetes.io/managed-by: terraform
+    app.kubernetes.io/name: api
+    app.kubernetes.io/part-of: api
+    app.kubernetes.io/version: 82e6b5d
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+      f:spec:
+        f:minReadySeconds: {}
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector:
+          f:matchLabels:
+            .: {}
+            f:app: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:iam.amazonaws.com/role: {}
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:automountServiceAccountToken: {}
+            f:containers:
+              k:{"name":"evercast-api"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"API_ROUTES_ENDPOINT"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"API_URL_ACCESSIBLE_BY_JANUS_K8S"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"AUTO_SCALING_GROUP_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"AUTOSCALER_URI"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"AUTOSCALING_AWS_REGION"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"CAPTCHA_SECRET_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"CRYPTO_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"DB_URI"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"DEBUG_LOGS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DOMAIN_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EBS_REPOSITORY_URL"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"ELASTIC_APM_SECRET_TOKEN"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"ELASTIC_APM_SERVER_URL"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"ELASTIC_APM_SERVICE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EMAIL_AWS_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EMAIL_AWS_REGION"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EMAIL_AWS_SECRET"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EMAIL_DEFAULT_FROM"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EMAIL_TEMPLATE_DIR"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"EMAIL_TRANSPORT"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"ENABLED_FEATURES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"FRONTEND_URL"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"INVOICED_API_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"INVOICED_API_URL"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"INVOICED_PUBLISHABLE_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"INVOICED_WEBHOOK_SECRET"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"JWT_SECRET"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_IMAGE_PULL_POLICY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_IP_TYPE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_JANUS_DOCKER_IMAGE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_NAMESPACE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_NODE_SELECTOR"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"LOG_LEVEL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MAX_EMPTY_NODES"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"MAX_PORT_RANGE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MIN_EMPTY_NODES"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"MIN_PORT_RANGE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NODE_ENV"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NODE_OPTIONS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"POSTGRAPH_DEFAULT_ROLE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"POSTGRAPH_OPTIONS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"POSTGRAPH_SCHEMAS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"RECORDINGS_AWS_ACCESS_KEY_ID"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"RECORDINGS_AWS_SECRET_ACCESS_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"REDIS_AUTH_PASS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"REDIS_HOSTNAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"REDIS_TLS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"S3_EMAIL_BUCKET"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"S3BUCKET"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"S3PATH"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"S3SSEKEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"SAML_CRYPTO"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"SAML_VALIDATOR"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"SENTRY_DSN"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"SSO_REDIRECT_URI"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SUPPORT_URL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"TWILIO_ACCOUNT_SID"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"TWILIO_AUTH_TOKEN"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"WEB_ROUTES_ENDPOINT"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":3000,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:nodeSelector:
+              .: {}
+              f:worker-group: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:shareProcessNamespace: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: HashiCorp
+    operation: Update
+    time: "2021-06-10T06:41:02Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:template:
+          f:metadata:
+            f:annotations:
+              f:kubectl.kubernetes.io/restartedAt: {}
+    manager: kubectl-rollout
+    operation: Update
+    time: "2021-06-30T17:34:51Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-06-30T22:35:29Z"
+  name: evercast-api
+  namespace: evercast-dev
+  resourceVersion: "12364599"
+  selfLink: /apis/apps/v1/namespaces/evercast-dev/deployments/evercast-api
+  uid: 37f53b50-13fc-4b7a-8bc3-dc85b0d3b3c5
+spec:
+  minReadySeconds: 1
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: evercast-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 50%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        iam.amazonaws.com/role: arn:aws:iam::755187940082:role/evercast-api
+        kubectl.kubernetes.io/restartedAt: "2021-06-30T18:34:56-04:00"
+      creationTimestamp: null
+      labels:
+        app: evercast-api
+    spec:
+      automountServiceAccountToken: true
+      containers:
+      - env:
+        - name: LOG_LEVEL
+          value: info
+        - name: DEBUG_LOGS
+          value: "true"
+        - name: NODE_ENV
+          value: production
+        - name: NODE_OPTIONS
+          value: --max-old-space-size=4000
+        - name: ENABLED_FEATURES
+          value: SAML_SSO,EXTERNAL_DEVICE_SHARE,PG_SUBSCRIPTIONS
+        - name: SSO_REDIRECT_URI
+          value: https://qa.evercast.us/api/federatedlogin
+        - name: SUPPORT_URL
+          value: https://support.evercast.us/
+        - name: MIN_PORT_RANGE
+          value: "1025"
+        - name: MAX_PORT_RANGE
+          value: "6025"
+        - name: CAPTCHA_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              key: captcha_secret
+              name: captcha
+              optional: false
+        - name: SAML_VALIDATOR
+          valueFrom:
+            secretKeyRef:
+              key: validator
+              name: aws-sm-saml
+              optional: false
+        - name: SAML_CRYPTO
+          valueFrom:
+            secretKeyRef:
+              key: key
+              name: aws-sm-saml
+              optional: false
+        - name: DOMAIN_NAME
+          valueFrom:
+            secretKeyRef:
+              key: janus-domain-name
+              name: janus-server
+              optional: false
+        - name: TWILIO_ACCOUNT_SID
+          valueFrom:
+            secretKeyRef:
+              key: sid
+              name: aws-sm-twilio
+              optional: false
+        - name: TWILIO_AUTH_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: aws-sm-twilio
+              optional: false
+        - name: DB_URI
+          valueFrom:
+            secretKeyRef:
+              key: db-uri
+              name: aws-sm-database-credentials
+              optional: false
+        - name: POSTGRAPH_SCHEMAS
+          valueFrom:
+            secretKeyRef:
+              key: postgraph_schema
+              name: aws-sm-postgraph
+              optional: false
+        - name: POSTGRAPH_OPTIONS
+          valueFrom:
+            secretKeyRef:
+              key: postgraph_options
+              name: aws-sm-postgraph
+              optional: false
+        - name: POSTGRAPH_DEFAULT_ROLE
+          valueFrom:
+            secretKeyRef:
+              key: postgraph_default_role
+              name: aws-sm-postgraph
+              optional: false
+        - name: EMAIL_TRANSPORT
+          valueFrom:
+            secretKeyRef:
+              key: ses-transport
+              name: ses-config
+              optional: false
+        - name: EMAIL_AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              key: ses-region
+              name: ses-config
+              optional: false
+        - name: EMAIL_TEMPLATE_DIR
+          valueFrom:
+            secretKeyRef:
+              key: email-template-dir
+              name: k8s-config
+              optional: false
+        - name: EMAIL_DEFAULT_FROM
+          valueFrom:
+            secretKeyRef:
+              key: ses-from
+              name: ses-config
+              optional: false
+        - name: EMAIL_AWS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: ses-key
+              name: aws-sm-ses-config
+              optional: false
+        - name: EMAIL_AWS_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: ses-secret
+              name: aws-sm-ses-config
+              optional: false
+        - name: RECORDINGS_AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              key: key
+              name: aws-sm-s3-recordings
+              optional: false
+        - name: RECORDINGS_AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: secret
+              name: aws-sm-s3-recordings
+              optional: false
+        - name: FRONTEND_URL
+          valueFrom:
+            secretKeyRef:
+              key: frontend-endpoint
+              name: api-misc
+              optional: false
+        - name: API_ROUTES_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              key: api-endpoint
+              name: api-misc
+              optional: false
+        - name: WEB_ROUTES_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              key: web-endpoint
+              name: api-misc
+              optional: false
+        - name: AUTOSCALER_URI
+          valueFrom:
+            secretKeyRef:
+              key: autoscaler-endpoint
+              name: api-misc
+              optional: false
+        - name: REDIS_HOSTNAME
+          valueFrom:
+            secretKeyRef:
+              key: redis-hostname
+              name: redis
+              optional: false
+        - name: REDIS_AUTH_PASS
+          valueFrom:
+            secretKeyRef:
+              key: auth
+              name: aws-sm-redis
+              optional: false
+        - name: REDIS_TLS
+          valueFrom:
+            secretKeyRef:
+              key: redis-tls
+              name: redis
+              optional: false
+        - name: CRYPTO_KEY
+          valueFrom:
+            secretKeyRef:
+              key: key
+              name: aws-sm-crypto
+              optional: false
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: jwt-secret
+              name: aws-sm-jwt-secret
+              optional: false
+        - name: S3_EMAIL_BUCKET
+          valueFrom:
+            secretKeyRef:
+              key: s3-email-bucket
+              name: s3-email-bucket
+              optional: false
+        - name: INVOICED_API_URL
+          valueFrom:
+            secretKeyRef:
+              key: invoiced-api-url
+              name: secret-api-invoiced-config
+              optional: false
+        - name: INVOICED_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: invoiced-api-key
+              name: secret-api-invoiced-config
+              optional: false
+        - name: INVOICED_PUBLISHABLE_KEY
+          valueFrom:
+            secretKeyRef:
+              key: invoiced-publishable-key
+              name: secret-api-invoiced-config
+              optional: false
+        - name: INVOICED_WEBHOOK_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: invoiced-webhook-secret
+              name: secret-api-invoiced-config
+              optional: false
+        - name: K8S_NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              key: k8s-namespace
+              name: k8s-config
+              optional: false
+        - name: K8S_NODE_SELECTOR
+          valueFrom:
+            secretKeyRef:
+              key: k8s-node-selector
+              name: k8s-config
+              optional: false
+        - name: K8S_IP_TYPE
+          valueFrom:
+            secretKeyRef:
+              key: k8s-ip-type
+              name: k8s-config
+              optional: false
+        - name: K8S_JANUS_DOCKER_IMAGE
+          valueFrom:
+            secretKeyRef:
+              key: k8s-janus-docker-image
+              name: k8s-config
+              optional: false
+        - name: K8S_IMAGE_PULL_POLICY
+          valueFrom:
+            secretKeyRef:
+              key: k8s-image-pull-policy
+              name: k8s-config
+              optional: false
+        - name: API_URL_ACCESSIBLE_BY_JANUS_K8S
+          valueFrom:
+            secretKeyRef:
+              key: api-url-accessible-by-janus-k8s
+              name: k8s-config
+              optional: false
+        - name: AUTO_SCALING_GROUP_NAME
+          valueFrom:
+            secretKeyRef:
+              key: auto-scaling-group-name
+              name: k8s-config
+              optional: false
+        - name: AUTOSCALING_AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              key: auto-scaling-aws-region
+              name: k8s-config
+              optional: false
+        - name: MIN_EMPTY_NODES
+          valueFrom:
+            secretKeyRef:
+              key: min-empty-nodes
+              name: k8s-config
+              optional: false
+        - name: MAX_EMPTY_NODES
+          valueFrom:
+            secretKeyRef:
+              key: max-empty-nodes
+              name: k8s-config
+              optional: false
+        - name: S3BUCKET
+          valueFrom:
+            secretKeyRef:
+              key: S3BUCKET
+              name: janus
+              optional: false
+        - name: S3PATH
+          valueFrom:
+            secretKeyRef:
+              key: S3PATH
+              name: janus
+              optional: false
+        - name: S3SSEKEY
+          valueFrom:
+            secretKeyRef:
+              key: S3SSEKEY
+              name: janus
+              optional: false
+        - name: EBS_REPOSITORY_URL
+          valueFrom:
+            secretKeyRef:
+              key: repository-url
+              name: ebs
+              optional: false
+        - name: SENTRY_DSN
+          valueFrom:
+            secretKeyRef:
+              key: sentry-dsn
+              name: aws-sm-sentry-api
+              optional: false
+        - name: ELASTIC_APM_SERVICE_NAME
+          valueFrom:
+            secretKeyRef:
+              key: elastic-apm-service-name
+              name: apm-config
+              optional: false
+        - name: ELASTIC_APM_SECRET_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: elastic-apm-secret-token
+              name: apm-config
+              optional: false
+        - name: ELASTIC_APM_SERVER_URL
+          valueFrom:
+            secretKeyRef:
+              key: elastic-apm-server-url
+              name: apm-config
+              optional: false
+        image: 755187940082.dkr.ecr.us-east-1.amazonaws.com/api/feature/csd-csm:82e6b5d
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 9
+          httpGet:
+            path: /healthz
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 20
+        name: evercast-api
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 9
+          httpGet:
+            path: /healthz
+            port: 3000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 20
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1000Mi
+          requests:
+            cpu: "1"
+            memory: 1000Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        worker-group: nodes
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: evercast-api-serviceaccount
+      serviceAccountName: evercast-api-serviceaccount
+      shareProcessNamespace: false
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 2
+  conditions:
+  - lastTransitionTime: "2021-06-10T06:41:47Z"
+    lastUpdateTime: "2021-06-10T06:41:47Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2021-06-10T06:41:02Z"
+    lastUpdateTime: "2021-06-30T22:35:29Z"
+    message: ReplicaSet "evercast-api-8c99b6f8f" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 11
+  readyReplicas: 2
+  replicas: 2
+  updatedReplicas: 2

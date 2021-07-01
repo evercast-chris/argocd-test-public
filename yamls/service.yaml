@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-10T06:41:01Z"
+  labels:
+    app.kubernetes.io/managed-by: terraform
+    app.kubernetes.io/name: api
+    app.kubernetes.io/part-of: api
+    app.kubernetes.io/version: 82e6b5d
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: HashiCorp
+    operation: Update
+    time: "2021-06-10T06:41:01Z"
+  name: evercast-api
+  namespace: evercast-dev
+  resourceVersion: "12235335"
+  selfLink: /api/v1/namespaces/evercast-dev/services/evercast-api
+  uid: 66e4bd15-0ebe-4e45-b22d-b8c257bdd6a5
+spec:
+  clusterIP: 172.20.55.169
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: evercast-api
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
