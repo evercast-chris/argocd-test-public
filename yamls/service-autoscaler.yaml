@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-10T06:41:01Z"
+  labels:
+    app.kubernetes.io/managed-by: terraform
+    app.kubernetes.io/name: autoscaler
+    app.kubernetes.io/part-of: autoscaler
+    app.kubernetes.io/version: e3428dee5b5cdb84b0f3a01894058ea1bbda860d
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: HashiCorp
+    operation: Update
+    time: "2021-06-10T06:41:01Z"
+  name: evercast-autoscaler
+  namespace: evercast-dev
+  resourceVersion: "10733"
+  selfLink: /api/v1/namespaces/evercast-dev/services/evercast-autoscaler
+  uid: 2bff63de-85b3-4378-adf6-a1970a73636c
+spec:
+  clusterIP: 172.20.25.200
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3005
+  selector:
+    app: evercast-autoscaler
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,663 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "10"
+  creationTimestamp: "2021-06-10T06:41:02Z"
+  generation: 10
+  labels:
+    app.kubernetes.io/managed-by: terraform
+    app.kubernetes.io/name: autoscaler
+    app.kubernetes.io/part-of: autoscaler
+    app.kubernetes.io/version: e3428dee5b5cdb84b0f3a01894058ea1bbda860d
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+      f:spec:
+        f:minReadySeconds: {}
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector:
+          f:matchLabels:
+            .: {}
+            f:app: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:iam.amazonaws.com/role: {}
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:automountServiceAccountToken: {}
+            f:containers:
+              k:{"name":"evercast-autoscaler"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"API_URL_ACCESSIBLE_BY_JANUS_K8S"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"AUTO_SCALING_GROUP_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"AUTOSCALING_AWS_REGION"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"CRYPTO_KEY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"DEBUG_LOGS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DOMAIN_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"DUMP_INTERVAL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DUMP_LIFETIME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"ELASTIC_APM_SECRET_TOKEN"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"ELASTIC_APM_SERVER_URL"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"ELASTIC_APM_SERVICE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"JANUS_SERVER"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"JWT_SECRET"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_IMAGE_PULL_POLICY"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_IP_TYPE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_JANUS_DOCKER_IMAGE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_NAMESPACE"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"K8S_NODE_SELECTOR"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"LIMIT_CPU_PER_POD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"LIMIT_MEM_PER_POD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"LOG_LEVEL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MAX_AVAILABLE_PODS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MAX_EMPTY_NODES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MAX_PODS_PER_NODE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MAX_PORT_RANGE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MIN_AVAILABLE_PODS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MIN_EMPTY_NODES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MIN_PODS_PER_NODE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MIN_PORT_RANGE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NODE_ENV"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NODE_OPTIONS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"REDIS_AUTH_PASS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"REDIS_HOSTNAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"REDIS_TLS"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                  k:{"name":"REQUEST_CPU_PER_POD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"REQUEST_MEM_PER_POD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SENTRY_DSN"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef:
+                        .: {}
+                        f:key: {}
+                        f:name: {}
+                        f:optional: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":3005,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:nodeSelector:
+              .: {}
+              f:worker-group: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:shareProcessNamespace: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: HashiCorp
+    operation: Update
+    time: "2021-06-10T06:41:02Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:template:
+          f:metadata:
+            f:annotations:
+              f:kubectl.kubernetes.io/restartedAt: {}
+    manager: kubectl-rollout
+    operation: Update
+    time: "2021-06-10T07:43:26Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-06-30T22:35:27Z"
+  name: evercast-autoscaler
+  namespace: evercast-dev
+  resourceVersion: "12364588"
+  selfLink: /apis/apps/v1/namespaces/evercast-dev/deployments/evercast-autoscaler
+  uid: cafff105-ad67-497a-91bb-5f1b660994f1
+spec:
+  minReadySeconds: 1
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: evercast-autoscaler
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 50%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        iam.amazonaws.com/role: arn:aws:iam::755187940082:role/api-qa
+        kubectl.kubernetes.io/restartedAt: "2021-06-30T18:34:56-04:00"
+      creationTimestamp: null
+      labels:
+        app: evercast-autoscaler
+    spec:
+      automountServiceAccountToken: true
+      containers:
+      - env:
+        - name: LOG_LEVEL
+          value: info
+        - name: DEBUG_LOGS
+          value: "true"
+        - name: NODE_ENV
+          value: production
+        - name: NODE_OPTIONS
+          value: --max-old-space-size=4000
+        - name: DUMP_LIFETIME
+          value: "86500"
+        - name: DUMP_INTERVAL
+          value: "60000"
+        - name: MIN_PORT_RANGE
+          value: "1025"
+        - name: MAX_PORT_RANGE
+          value: "2025"
+        - name: MAX_PODS_PER_NODE
+          value: "2"
+        - name: MIN_PODS_PER_NODE
+          value: "1"
+        - name: LIMIT_MEM_PER_POD
+          value: 3Gi
+        - name: LIMIT_CPU_PER_POD
+          value: 1000m
+        - name: REQUEST_MEM_PER_POD
+          value: 512M
+        - name: REQUEST_CPU_PER_POD
+          value: 1000m
+        - name: MAX_AVAILABLE_PODS
+          value: "5"
+        - name: MIN_AVAILABLE_PODS
+          value: "1"
+        - name: MAX_EMPTY_NODES
+          value: "1"
+        - name: MIN_EMPTY_NODES
+          value: "1"
+        - name: DOMAIN_NAME
+          valueFrom:
+            secretKeyRef:
+              key: janus-domain-name
+              name: janus-server
+              optional: false
+        - name: JANUS_SERVER
+          valueFrom:
+            secretKeyRef:
+              key: janus-server
+              name: janus-server
+              optional: false
+        - name: REDIS_HOSTNAME
+          valueFrom:
+            secretKeyRef:
+              key: redis-hostname
+              name: redis
+              optional: false
+        - name: REDIS_AUTH_PASS
+          valueFrom:
+            secretKeyRef:
+              key: auth
+              name: aws-sm-redis
+              optional: false
+        - name: REDIS_TLS
+          valueFrom:
+            secretKeyRef:
+              key: redis-tls
+              name: redis
+              optional: false
+        - name: CRYPTO_KEY
+          valueFrom:
+            secretKeyRef:
+              key: key
+              name: aws-sm-crypto
+              optional: false
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: jwt-secret
+              name: aws-sm-jwt-secret
+              optional: false
+        - name: K8S_NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              key: k8s-namespace
+              name: k8s-config
+              optional: false
+        - name: K8S_NODE_SELECTOR
+          valueFrom:
+            secretKeyRef:
+              key: k8s-node-selector
+              name: k8s-config
+              optional: false
+        - name: K8S_IP_TYPE
+          valueFrom:
+            secretKeyRef:
+              key: k8s-ip-type
+              name: k8s-config
+              optional: false
+        - name: K8S_JANUS_DOCKER_IMAGE
+          valueFrom:
+            secretKeyRef:
+              key: k8s-janus-docker-image
+              name: k8s-config
+              optional: false
+        - name: K8S_IMAGE_PULL_POLICY
+          valueFrom:
+            secretKeyRef:
+              key: k8s-image-pull-policy
+              name: k8s-config
+              optional: false
+        - name: API_URL_ACCESSIBLE_BY_JANUS_K8S
+          valueFrom:
+            secretKeyRef:
+              key: api-url-accessible-by-janus-k8s
+              name: k8s-config
+              optional: false
+        - name: AUTO_SCALING_GROUP_NAME
+          valueFrom:
+            secretKeyRef:
+              key: auto-scaling-group-name
+              name: k8s-config
+              optional: false
+        - name: AUTOSCALING_AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              key: auto-scaling-aws-region
+              name: k8s-config
+              optional: false
+        - name: SENTRY_DSN
+          valueFrom:
+            secretKeyRef:
+              key: sentry-dsn
+              name: aws-sm-sentry-api
+              optional: false
+        - name: ELASTIC_APM_SERVICE_NAME
+          valueFrom:
+            secretKeyRef:
+              key: elastic-apm-service-name
+              name: apm-config
+              optional: false
+        - name: ELASTIC_APM_SECRET_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: elastic-apm-secret-token
+              name: apm-config
+              optional: false
+        - name: ELASTIC_APM_SERVER_URL
+          valueFrom:
+            secretKeyRef:
+              key: elastic-apm-server-url
+              name: apm-config
+              optional: false
+        image: 755187940082.dkr.ecr.us-east-1.amazonaws.com/auto-scaler:e3428dee5b5cdb84b0f3a01894058ea1bbda860d
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 9
+          httpGet:
+            path: /healthz
+            port: 3005
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 20
+        name: evercast-autoscaler
+        ports:
+        - containerPort: 3005
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 9
+          httpGet:
+            path: /healthz
+            port: 3005
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 20
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1000Mi
+          requests:
+            cpu: "1"
+            memory: "1"
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        worker-group: nodes
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: evercast-api-serviceaccount
+      serviceAccountName: evercast-api-serviceaccount
+      shareProcessNamespace: false
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2021-06-10T06:41:31Z"
+    lastUpdateTime: "2021-06-10T06:41:31Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2021-06-10T06:41:02Z"
+    lastUpdateTime: "2021-06-30T22:35:28Z"
+    message: ReplicaSet "evercast-autoscaler-76859d6578" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 10
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
